@@ -15,13 +15,13 @@ body {
 
 #main {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   /* background-color: red; */
 }
 
 #top {
   width: 100%;
-  height: 60%;
+  min-height: 60vh;
   background-image: url(https://images.unsplash.com/photo-1519120944692-1a8d8cfc107f?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   /* This sets the background position to 50% along the horizontal (X) axis and 60% along the vertical (Y) axis, relative to the containing element. */
   background-position: 50% 60%;
@@ -31,7 +31,7 @@ body {
 #overlay {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: inherit;
   /* background-color: rgba(0, 0, 0, 0.293); */
   background: rgba(2, 0, 36, 0.411);
   background: linear-gradient(
@@ -83,14 +83,14 @@ i {
 
 #bottom {
   width: 100%;
-  height: 40%;
+  min-height: 40vh;
   /* background-color: green; */
   display: flex;
 }
 
 #child1 {
   width: 20%;
-  height: 100%;
+  min-height: inherit;
   background-color: #ffffffff;
   padding: 50px;
 }
@@ -108,14 +108,14 @@ p span {
 }
 #child2 {
   width: 30%;
-  height: 100%;
+  min-height: inherit;
   background-image: url(https://images.unsplash.com/photo-1636169419376-fcc395450370?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-position: center;
   background-size: cover;
 }
 #child2-overlay {
   width: 100%;
-  height: 100%;
+  min-height: inherit;
   background: rgba(2, 0, 36, 0.411);
   background: linear-gradient(
     90deg,
@@ -126,7 +126,7 @@ p span {
 }
 #child3 {
   width: 20%;
-  height: 100%;
+  min-height: inherit;
   /* background-color: coral; */
   display: flex;
   flex-direction: column;
@@ -134,7 +134,7 @@ p span {
 
 #child4 {
   width: 30%;
-  height: 100%;
+  min-height: inherit;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -167,7 +167,7 @@ p span {
 }
 #grand1 {
   width: 100%;
-  height: 50%;
+  min-height: 20vh;
   padding: 20px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -177,17 +177,73 @@ p span {
   );
   color: white;
 }
-.Art{
-    font-size: 20px;
-    margin-bottom: 10px;
+.Art {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.subArt{
-    font-weight: 300;
+.subArt {
+  font-weight: 300;
 }
 #grand2 {
   width: 100%;
-  height: 50%;
+  min-height: 20vh;
   background-image: url(https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-position: center;
   background-size: cover;
+}
+
+/* Responsive Design */
+
+@media (max-width: 500px) {
+  #overlay #text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #text h1 {
+    font-size: 10vw;
+  }
+  #overlay #text #text-right {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #overlay #text #text-right p {
+    width: initial;
+    margin-top: 20px;
+  }
+
+  #overlay #text #text-right #icons {
+    margin-top: 30px;
+  }
+
+  i {
+    color: white;
+  }
+
+  #bottom {
+    flex-direction: column;
+    min-height: 20vh;
+  }
+
+  #child1 {
+    width: 100%;
+  }
+  #child2 {
+    width: 100%;
+    min-height: 40vh;
+  }
+  #child3 {
+    width: 100%;
+    flex-direction: column;
+    min-height: 40vh;
+  }
+  #grand2{
+    min-height: 45vh;
+    background-position: top;
+    
+  }
+  #child4 {
+    width: 100%;
+  }
 }
